@@ -1,0 +1,68 @@
+﻿
+> vishnavi-organics@0.1.0 lint
+> eslint
+
+
+E:\new cloneee\vishnavi-organics\src\app\admin\page.tsx
+  41:12  warning  'franchises' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  42:12  warning  'farmers' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+E:\new cloneee\vishnavi-organics\src\app\api\admin\route.ts
+  10:27  warning  'request' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\new cloneee\vishnavi-organics\src\app\api\gst-report\route.ts
+  11:14  warning  '_error' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\new cloneee\vishnavi-organics\src\app\api\invoice\route.ts
+   4:28  warning  '_req' is defined but never used          @typescript-eslint/no-unused-vars
+  58:39  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\new cloneee\vishnavi-organics\src\app\api\notify\route.ts
+  27:14  warning  '_error' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\new cloneee\vishnavi-organics\src\app\api\shipment\route.ts
+   5:34  warning  'awb' is defined but never used     @typescript-eslint/no-unused-vars
+  32:12  warning  '_error' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\new cloneee\vishnavi-organics\src\app\api\test-db\route.ts
+  17:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\new cloneee\vishnavi-organics\src\app\login\page.tsx
+  20:18  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\new cloneee\vishnavi-organics\src\components\BuyButton.tsx
+  14:45  warning  '_amount' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\new cloneee\vishnavi-organics\src\components\MandalaPattern.tsx
+  5:58  warning  'opacity' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+E:\new cloneee\vishnavi-organics\src\context\CartContext.tsx
+  36:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+E:\new cloneee\vishnavi-organics\src\context\CartContext.tsx:36:17
+  34 |         if (saved) {
+  35 |             try {
+> 36 |                 setItems(JSON.parse(saved));
+     |                 ^^^^^^^^ Avoid calling setState() directly within an effect
+  37 |             } catch (e) {
+  38 |                 console.error("Failed to parse cart", e);
+  39 |             }  react-hooks/set-state-in-effect
+
+E:\new cloneee\vishnavi-organics\src\lib\firebase.ts
+  26:10  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+E:\new cloneee\vishnavi-organics\src\lib\mongodb.ts
+  22:5  warning  Unused eslint-disable directive (no problems were reported from 'no-var')
+
+E:\new cloneee\vishnavi-organics\src\models\Order.ts
+  1:8  warning  'mongoose' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 17 problems (3 errors, 14 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

@@ -1,0 +1,21 @@
+[0m[0m
+[0m[4mE:\new cloneee\vishnavi-organics\src\app\api\gst-report\route.ts[24m[0m
+[0m  [2m11:14[22m  [33mwarning[39m  '_error' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mE:\new cloneee\vishnavi-organics\src\app\api\invoice\route.ts[24m[0m
+[0m  [2m4:28[22m  [33mwarning[39m  '_req' is defined but never used          [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m6:19[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mE:\new cloneee\vishnavi-organics\src\app\api\notify\route.ts[24m[0m
+[0m   [2m1:8[22m   [33mwarning[39m  'twilio' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m26:14[22m  [33mwarning[39m  '_error' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mE:\new cloneee\vishnavi-organics\src\app\api\shipment\route.ts[24m[0m
+[0m  [2m17:12[22m  [33mwarning[39m  '_error' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mE:\new cloneee\vishnavi-organics\src\components\BuyButton.tsx[24m[0m
+[0m   [2m4:45[22m  [33mwarning[39m  '_amount' is defined but never used       [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m16:42[22m  [31merror[39m    Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[31m[1m✖ 8 problems (2 errors, 6 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m
