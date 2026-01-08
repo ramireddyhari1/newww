@@ -1,6 +1,8 @@
 import PDFDocument from "pdfkit";
 import { NextResponse } from "next/server";
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(_req: Request) {
     const doc = new PDFDocument();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
