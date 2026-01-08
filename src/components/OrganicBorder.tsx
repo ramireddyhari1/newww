@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface OrganicBorderProps {
     children: React.ReactNode;
@@ -16,7 +16,7 @@ export default function OrganicBorder({
     color = "#C28E0E", // Turmeric gold
 }: OrganicBorderProps) {
 
-    const lineDraw = {
+    const lineDraw: Variants = {
         hidden: { scaleX: 0, opacity: 0 },
         visible: {
             scaleX: 1,
@@ -25,7 +25,7 @@ export default function OrganicBorder({
         }
     };
 
-    const vertLineDraw = {
+    const vertLineDraw: Variants = {
         hidden: { scaleY: 0, opacity: 0 },
         visible: {
             scaleY: 1,
@@ -177,7 +177,7 @@ function FloatingLeaf({ delay, top, left, right, bottom }: { delay: number; top?
     return (
         <motion.div
             className="absolute w-5 h-5 text-templeGreen"
-            style={{ top, left, right, bottom }}
+            style={{ top, left, right, bottom, willChange: "transform" }}
             animate={{
                 y: [0, -5, 0],
                 rotate: [0, 15, -15, 0],

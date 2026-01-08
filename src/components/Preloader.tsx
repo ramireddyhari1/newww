@@ -50,8 +50,7 @@ export default function Preloader() {
 
                                 {/* LAYER 1: 108 Flames/Blades Ring (The Cutting Edge) - Fast Clockwise */}
                                 <motion.g
-                                    originX="150"
-                                    originY="150"
+                                    style={{ transformOrigin: "150px 150px" }}
                                     animate={{ rotate: 360 }}
                                     transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                                 >
@@ -68,8 +67,7 @@ export default function Preloader() {
 
                                 {/* LAYER 2: Tantric Star (Shatkona) - Slow Counter-Clockwise */}
                                 <motion.g
-                                    originX="150"
-                                    originY="150"
+                                    style={{ transformOrigin: "150px 150px" }}
                                     animate={{ rotate: -360 }}
                                     transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                                 >
