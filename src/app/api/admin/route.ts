@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import mongoose from 'mongoose';
 import dbConnect from '@/lib/mongodb';
 
+export const dynamic = 'force-dynamic';
+
 // Define Admin Schema if not exists, or use raw collection for now as per prompt
 // For consistency with the existing project, I'll use Mongoose connection
 // but interact with the collection directly to match the user's snippet logic closely
