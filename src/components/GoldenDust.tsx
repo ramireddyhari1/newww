@@ -43,6 +43,7 @@ export default function GoldenDust() {
                         // Actually, to match the user's keyframes exactly but with custom opacity:
                         animation: `float ${p.duration}s ease-in-out infinite`,
                         animationDelay: `-${p.delay}s`,
+                        willChange: "transform",
                         "--target-opacity": p.opacity, // passing to CSS if needed, or just relying on base style
                     } as React.CSSProperties}
                 />

@@ -3,6 +3,13 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        formats: ['image/avif', 'image/webp'] as ('image/avif' | 'image/webp')[],
+    },
+    compiler: {
+        removeConsole: process.env.NODE_ENV === "production",
+    },
+};
 
 export default withNextIntl(nextConfig);

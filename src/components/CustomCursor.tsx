@@ -47,6 +47,14 @@ export default function CustomCursor() {
         const canvas = canvasRef.current;
         const ctx = canvas?.getContext('2d');
         let animationId: number;
+        let isActive = false;
+
+        const startLoop = () => {
+            if (!isActive) {
+                isActive = true;
+                render();
+            }
+        };
 
         const spawnParticles = (x: number, y: number, count: number) => {
             for (let i = 0; i < count; i++) {
@@ -60,10 +68,18 @@ export default function CustomCursor() {
                     size: Math.random() * 2 + 0.5
                 });
             }
+            startLoop();
         };
 
         const render = () => {
             if (!canvas || !ctx) return;
+
+            // If no particles and canvas is clear (we can assume clear if we stop loop properly), stop.
+            if (particles.current.length === 0) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear one last time
+                isActive = false;
+                return;
+            }
 
             // Resize if needed
             if (canvas.width !== window.innerWidth || canvas.height !== window.innerHeight) {
@@ -75,14 +91,15 @@ export default function CustomCursor() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             // Update & Draw Particles
-            particles.current.forEach((p, index) => {
+            for (let i = particles.current.length - 1; i >= 0; i--) {
+                const p = particles.current[i];
                 p.x += p.vx;
                 p.y += p.vy;
                 p.life -= 0.02; // Fade speed
 
                 if (p.life <= 0) {
-                    particles.current.splice(index, 1);
-                    return;
+                    particles.current.splice(i, 1);
+                    continue;
                 }
 
                 ctx.globalAlpha = p.life;
@@ -90,12 +107,10 @@ export default function CustomCursor() {
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
                 ctx.fill();
-            });
+            }
 
             animationId = requestAnimationFrame(render);
         };
-
-        render();
 
         return () => {
             window.removeEventListener("mousemove", moveCursor);

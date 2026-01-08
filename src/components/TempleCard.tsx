@@ -58,6 +58,7 @@ export default function TempleCard({
                 rotateX,
                 rotateY,
                 transformStyle: "preserve-3d",
+                willChange: "transform",
             }}
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.02 }}
