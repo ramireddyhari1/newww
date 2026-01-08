@@ -17,8 +17,10 @@ export default function LoginPage() {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             router.push("/admin");
-        } catch (err) {
-            setError("Invalid credentials or admin access denied.");
+        } catch (err: any) {
+            console.error("Login error:", err);
+            // Show the actual error message for debugging
+            setError(err.message || "Invalid credentials or admin access denied.");
         }
     };
 
