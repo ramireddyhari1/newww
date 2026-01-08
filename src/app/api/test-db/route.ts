@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
     try {
         const uri = process.env.MONGODB_URI;
